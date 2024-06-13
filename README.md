@@ -27,8 +27,8 @@ struct IncommingMsgPaylaod {
 
 /// Consumes messages.
 async fn consumer_handler(
-    Payload(event): Payload<request::Event>,
-    State: State,
+    Json(event): Json<request::Event>, // Consumer parameters are very flexible due to the extractor pattern.
+    State: State,                      //
 ) -> Result<(), anyhow::Error> {
     // Do something..
 }

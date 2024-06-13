@@ -1,6 +1,6 @@
 # hare
 
-`hare` is a `RabbitMQ` client that focuses on providing an ergonomic, streamlined, easy to setup and production ready RabbitMQ experience.
+`hare` is a `RabbitMQ` client that focuses on providing an ergonomic, streamlined, easy to setup and production ready `RabbitMQ` experience.
 
 This repo is still under construction.
 

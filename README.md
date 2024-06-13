@@ -48,14 +48,14 @@ async fn main() -> anyhow::Result<()> {
 
     // Declare an `exchange` using the exchange declare builder.
     rabbitmq_client.exchange_declare_builder(exchange_name, hare::lapin::ExchangeKind::Topic)
-        .auto_delete(true) // Delete the exchange when no consumers are present anymore.
+        .auto_delete(true)
         .declare()
         .await?;
 
     // Declare a `queue` using the queue declare builder.
     let queue = rabbitmq_client
         .queue_declare_builder("example_queue")
-        .auto_delete(true) // Delete the queue when no exchange is present anymore.
+        .auto_delete(true)
         .declare()
         .await?;
 

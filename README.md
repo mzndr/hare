@@ -18,8 +18,7 @@ struct State {
     pub db: SomeClient,
 }
 
-/// The message payload to be extracted from the incomming message. Assumed to be deserializable `JSON` data,
-/// but can be any format (e.g. `Protobuffs`) supported by `extractors`.
+/// The message payload to be extracted from the incomming message.
 #[derive(serde::Deserialize)]
 struct IncommingMsgPaylaod {
     pub foo: String
@@ -28,7 +27,7 @@ struct IncommingMsgPaylaod {
 /// Consumes messages.
 async fn consumer_handler(
     Json(event): Json<request::Event>, // Consumer parameters are very flexible due to the extractor pattern.
-    State: State,                      //
+    State(state): State,
 ) -> Result<(), anyhow::Error> {
     // Do something..
 }
@@ -71,6 +70,9 @@ async fn main() -> anyhow::Result<()> {
         .queue_bind_builder(&queue, exchange_name, "example.routing_key")
         .bind()
         .await?;
+
+    // Run the client and wait for all consumers to be finished.
+    rabbitmq_client.run().await?;
 }
 
 ```

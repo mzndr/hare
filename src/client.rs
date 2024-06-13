@@ -182,13 +182,13 @@ where
     }
 
     /// Joins the previously created basic consumers. Note that consumers, which are created after
-    /// this method was called, will not be joined.
+    /// this method was called will not be joined.
     ///
     /// # Errors
     ///
     /// # Panics
     /// If the lapin connection errors.
-    pub async fn completion(&self) -> Result<(), JoinBasicConsumersError> {
+    pub async fn run(&self) -> Result<(), JoinBasicConsumersError> {
         /// Prefix for errors happening here duh
         const ERR_TRACE_PREFIX: &str = "a RabbitMQ client consumer failed";
 

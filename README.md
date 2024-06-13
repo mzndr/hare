@@ -1,13 +1,13 @@
 # hare
 
-`hare` is a `RabbitMQ` client that focuses on a streamlined and production ready experience.
+`hare` is a `RabbitMQ` client that focuses on providing an ergonomic, streamlined, easy to setup and production ready RabbitMQ experience.
 
 This repo is still under construction.
 
 ## Features
 - Connection pooling using `deadpool`
-- Easy consumer concurrency
-- Consume any data `consumers` using the `extractor pattern`
+- Easy `consumer` concurrency
+- Consume any data in `consumers` using the `extractor pattern`
 
 ## Quickstart
 

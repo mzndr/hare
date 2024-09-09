@@ -18,9 +18,9 @@ struct State {
     pub db: SomeClient,
 }
 
-/// The message payload to be extracted from the incomming message.
+/// The message payload to be extracted from the incoming message.
 #[derive(serde::Deserialize)]
-struct IncommingMsgPayload {
+struct IncomingMsgPayload {
     pub foo: String
 }
 

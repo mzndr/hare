@@ -20,7 +20,7 @@ struct State {
 
 /// The message payload to be extracted from the incomming message.
 #[derive(serde::Deserialize)]
-struct IncommingMsgPaylaod {
+struct IncommingMsgPayload {
     pub foo: String
 }
 

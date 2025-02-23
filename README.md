@@ -71,7 +71,7 @@ async fn main() -> anyhow::Result<()> {
         .bind()
         .await?;
 
-    // Run the client and wait for all consumers to be finished.
+    // Run the client, consumers will now be ready to ingest messages.
     rabbitmq_client.run().await?;
 }
 

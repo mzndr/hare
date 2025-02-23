@@ -26,7 +26,7 @@ struct IncomingMsgPayload {
 
 /// Consumes messages.
 async fn consumer_handler(
-    Json(event): Json<IncomingMsgPayload>, // Consumer parameters are very flexible due to the extractor pattern.
+    Json(event): Json<IncomingMsgPayload>, // This example uses the JSON extractor, but extractors can be used to deserialize all kinds of data.
     State(state): State,
 ) -> Result<(), anyhow::Error> {
     // Do something...
